@@ -6,18 +6,18 @@ class Instagram
 	attr_accessor :like
 
 	def initialize(gender)
-    self.gender = gender
-  	self.areYouFamous = false
-  	self.like = 0
-  end
+		self.gender = gender
+		self.areYouFamous = false
+		self.like = 0
+	end
 
-  def setAreYouFamous(areYouFamous)
-    self.areYouFamous = areYouFamous
-  end
+	def setAreYouFamous(areYouFamous)
+		self.areYouFamous = areYouFamous
+	end
 
-  def profile
-  	self.areYouFamous ? "sexy" : "barzo"
-  end
+	def profile
+		self.areYouFamous ? "sexy" : "barzo"
+	end
 end
 
 class Selfie < Instagram
@@ -47,7 +47,7 @@ class Selfie < Instagram
 			end
 
 			while self.showBoobs && $barzoCount < 150 do 
-  			self.like += $barzoCount
+ 				self.like += $barzoCount
 				$barzoCount += 1
 			end
 		else
@@ -55,3 +55,7 @@ class Selfie < Instagram
 		end
 	end
 end
+
+ayca = Selfie.new("female")
+ayca.takePhoto(true)
+ayca.profile
